@@ -1,3 +1,188 @@
-<h2 id="title">Welcome to Ember</h2>
+<div class="top-header">
+    <div>
+        <h4 class="header">Dashboard</h4>
+    </div>
+</div>
 
+<div class="grand-parent" style="margin-top: 100px;">
+
+    <div class="parent-div scroll">
+        <div class="content-body">
+            <div class="upper-box">
+                {{!-- {{top-bar title="Contract By Status" istrue=true}} Component --}}
+            {{#top-bar title="Contract By Status" istrue=true}}
+                {{!-- <select name="duration" class="dropdown">
+                <optgroup label="CREATED PERIOD">
+                    <option value="overall">Overall</option>
+                    <option value="thismonth">This month</option>
+                    <option value="thisyear">This Year</option>
+                    <option value="last3months">Last 3 months</option>
+                    <option value="last6months">Last 6 months</option>
+                </optgroup>
+            </select> --}}
+            Hello
+            {{/top-bar}}
+                <div class="status">
+                    {{#each model.contracts as |item|}}
+                    {{arrow-box class=item.class name=item.name}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="upper-box">
+                {{top-bar title="Pending Contracts" istrue=true}} {{!-- Component --}}
+                <div class="icons-bar">
+                    {{#each model.statusValues as |status|}}
+                    {{status-bar name=status}}
+                    {{/each}}
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row content-body" style="background-color: #f1e5e586;">
+            {{top-bar title-name="To Approve" label="No Contracts" isbox=true}}
+            {{top-bar title-name="Pending Obligations" label="No Obligations" isbox=true}}
+        </div>
+
+        <div class="content-body">
+            <div class="upper-box">
+                <div class="contract-status-box">
+                    <div class="contract-status-bar">
+                        Total Contract Value
+                        <div class="users-list">
+                            <select name="duration" class="dropdown">
+                                <optgroup label="CREATED PERIOD">
+                                    <option value="overall">Overall</option>
+                                    <option value="thismonth">This month</option>
+                                    <option value="thisyear">This Year</option>
+                                    <option value="last3months">Last 3 months</option>
+                                    <option value="last6months">Last 6 months</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="status1" style="border-bottom:none;">
+                    <span class="data">No Data Available</span>
+                    <span class="data">No Data Available</span>
+                </div>
+                <div class="status1">
+                    <span class="data below-data">
+                        <div><b>Upcoming Contracts</b></div><br>
+                        <div>SELL BUY</div><br>
+                        <div>$0 $0</div>
+                    </span>
+                    <span class="data below-data">
+                        <div><b>Active Contracts</b></div><br>
+                        <div>SELL BUY</div><br>
+                        <div>$0 $0</div>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="child-div">
+
+        <select name="users" class="dropdown" style="border:none;background-color:#fff;">
+            <option value="name">Calender</option>
+            <option value="all-users">Schedule</option>
+            <option value="all-users">Reminders</option>
+        </select>
+        <hr>
+        <span style="padding-left: 10px;">&lt;&lt;</span>
+        <span class="month">AUGUST</span>
+        <span>&gt;&gt;</span>
+        <hr>
+
+        <table bgcolor="lightgrey" align="center" cellspacing="5" cellpadding="7">
+            <thead>
+                <tr>
+                    <th>
+                        Sun</th>
+                    <th>
+                        Mon</th>
+                    <th>
+                        Tue</th>
+                    <th>
+                        Wed</th>
+                    <th>
+                        Thu</th>
+                    <th>
+                        Fri</th>
+                    <th>
+                        Sat</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="next-month">26</td>
+                    <td class="next-month">27</td>
+                    <td class="next-month">28</td>
+                    <td class="next-month">29</td>
+                    <td class="next-month">30</td>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td class="next-month">1</td>
+                    <td class="next-month">2</td>
+                    <td class="next-month">3</td>
+                    <td class="next-month">4</td>
+                    <td class="next-month">5</td>
+                    <td class="next-month">6</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+
+    </div>
+</div>
+
+{{#each model as |item|}}
+    <h1>{{item.username}}</h1>
+{{/each}}
 {{outlet}}

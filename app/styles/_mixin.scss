@@ -1,0 +1,11 @@
+@mixin display-flex-row($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+
+@mixin overflow-mixin {
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align:justify;
+}

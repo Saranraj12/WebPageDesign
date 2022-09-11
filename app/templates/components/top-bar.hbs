@@ -1,0 +1,30 @@
+{{#if istrue}}
+<div class="contract-status-box">
+    <div class="contract-status-bar">
+        {{title}}
+        <div class="users-list">
+            {{yield}}
+        </div>
+        <div class="users-list">
+            <select name="users" class="dropdown">
+                <option value="name">User 1(me)</option>
+                <option value="all-users">All users</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+{{/if}}
+
+
+{{#if isbox}}
+<div class="box">
+    <p class="boxhead">{{title-name}} (0)</p>
+    <div class="content">
+        <div><img src='https://localcss.zohostatic.com/zohocontracts/5330142/assets/images/general/nodata-table.png'>
+        </div>
+        <div class="nodate-label">{{label}}</div>
+    </div>
+</div>
+
+{{/if}}
